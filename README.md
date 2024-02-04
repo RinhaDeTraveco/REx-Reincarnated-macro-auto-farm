@@ -8,7 +8,9 @@
 
 4 - Contente > sounds > dele all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
 
-5 - ONLY USE AT PRIVATE SERVER
+5 - put your pc volume on MAX and roblox volume on MAX. 
+
+6 - ONLY USE AT PRIVATE SERVER
 
 # IN GAME CONFIG
 
