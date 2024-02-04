@@ -22,3 +22,5 @@ Mine Reset Notification Off
 (that shit detects rare ores by dB [sound] that they produce when spawn)
 
 Close your Broswer, Discord, Spotify, Steam, etc...
+
+(if you got a error about "VA.ahk" don't worry, it only occurred because the AutoHotKey can't find a lib that the script need, so, to fix this, execute the macro clicking on him inside the folder "Rex reincarnated". OR creat a new folder and copy and past the "VA.ahk" script [the lib script] and put the macro os the same folder of VA)
