@@ -49,6 +49,9 @@ EquipAll()
 
 Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 
+Send {r down}
+Send {r up}
+
 r::
 
 Loop
