@@ -22,29 +22,6 @@ Global Layer := 85
 ;Mantle = 87
 ;Core = 88
 
-;;;;;;;;;;;;;;;;;;;;;;;;VAR
-
-#Include VA.ahk
-#SingleInstance, Force
-audioMeter := VA_GetAudioMeter()
-VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
-VA_GetDevicePeriod("capture", devicePeriod)
-
-Global lolo := 0
-x := A_screenWidth
-y := A_screenHeight
-pos1 := x/2
-pos2 := y/2
-Random gg, 45, 100
-Random ez, 1500, 8900
-Random cutie, 500, 3333
-Random PORRA, 2500, 3750
-Random LL, 350, 1750
-Random FastMouseMove, 10, 511
-Random meno, 50000, 100000
-
-;;;;;;;;;;;;;;;;;;;;;;;;VAR
-
 MouseMove, 500, 600
 Sleep, PORRA
 Click, Right, down
@@ -73,16 +50,6 @@ EquipAll()
 Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 
 r::
-
-;;;;;;;;;;;;;;;;;;; VAR
-
-Global Laila = 0
-Global Main := 1
-Global bb := 12
-Global reseting := 1
-global stop := 0
-
-;;;;;;;;;;;;;;;;;;; VAR
 
 Loop
 {
@@ -377,3 +344,33 @@ Send {> up}
 
 Send {i down}{i up}
 }
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;VAR
+
+#Include VA.ahk
+#SingleInstance, Force
+audioMeter := VA_GetAudioMeter()
+VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
+VA_GetDevicePeriod("capture", devicePeriod)
+
+Global lolo := 0
+x := A_screenWidth
+y := A_screenHeight
+pos1 := x/2
+pos2 := y/2
+Random gg, 45, 100
+Random ez, 1500, 8900
+Random cutie, 500, 3333
+Random PORRA, 2500, 3750
+Random LL, 350, 1750
+Random FastMouseMove, 10, 511
+Random meno, 50000, 100000
+
+Global Laila = 0
+Global Main := 1
+Global bb := 12
+Global reseting := 1
+global stop := 0
+
+;;;;;;;;;;;;;;;;;;;;;;;;VAR
