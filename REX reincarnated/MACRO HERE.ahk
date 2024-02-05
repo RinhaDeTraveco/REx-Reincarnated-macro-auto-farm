@@ -1,8 +1,7 @@
 MsgBox, "
 (
-F7 = Start
+F7 = Start and restart If the script stopped due to finding a rare ore, and you (player) already collected it, use this to get the script going again
 Y = Exit
-K = If the script stopped due to finding a rare ore, and you (player) already collected it, use this to get the script going again
 )"
 
 
@@ -22,6 +21,8 @@ Global Layer := 85
 ;Mantle = 87
 ;Core = 88
 
+if P1 = 0
+{
 MouseMove, 500, 600
 Sleep, PORRA
 Click, Right, down
@@ -49,10 +50,8 @@ EquipAll()
 
 Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 
-Send {r down}
-Send {r up}
-
-r::
+Global P1 := 1
+}
 
 Loop
 {
@@ -375,5 +374,6 @@ Global Main := 1
 Global bb := 12
 Global reseting := 1
 global stop := 0
+Global P1 := 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
