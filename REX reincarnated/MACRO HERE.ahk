@@ -1,4 +1,12 @@
-﻿y::
+MsgBox, "
+(
+F7 = Start
+Y = Exit
+K = If the script stopped due to finding a rare ore, and you (player) already collected it, use this to get the script going again
+)"
+
+
+y::
 Exitapp
 return
 
@@ -30,15 +38,10 @@ pos2 := y/2
 Random gg, 45, 100
 Random ez, 1500, 8900
 Random cutie, 500, 3333
-Random PORRA, 2500, 5000
-Random LL, 5000, 6000
+Random PORRA, 2500, 3750
+Random LL, 350, 1750
 Random FastMouseMove, 10, 511
 Random meno, 50000, 100000
-Global Laila = 0
-Global Main := 1
-Global bb := 12
-Global reseting := 1
-global stop := 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
@@ -68,6 +71,18 @@ Sleep, cutie
 EquipAll()
 
 Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
+
+r::
+
+;;;;;;;;;;;;;;;;;;; VAR
+
+Global Laila = 0
+Global Main := 1
+Global bb := 12
+Global reseting := 1
+global stop := 0
+
+;;;;;;;;;;;;;;;;;;; VAR
 
 Loop
 {
@@ -143,7 +158,7 @@ Spawn()
 
 reseting = 1
 
-Sleep, LL
+Sleep, PORRA
 
 Button()
 Button()
@@ -262,69 +277,69 @@ Sleep, meno
 EquipAll()
 {
 Send {2 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {2 up}
 Send {3 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {3 up}
 Send {4 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {4 up}
 Send {5 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {5 up}
 Send {6 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {6 up}
 Send {7 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {7 up}
 Send {8 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {8 up}
 Send {9 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {9 up}
 Send {0 down}
-Sleep, PORRA
+Sleep, LL
 Click, Left, down
 Sleep, FastMouseMove
 Click, Left, up
-Sleep, PORRA
+Sleep, LL
 Send {0 up}
-Sleep, PORRA
+Sleep, LL
 Send {1 down}
 Sleep, FastMouseMove
 Send {1 up}
