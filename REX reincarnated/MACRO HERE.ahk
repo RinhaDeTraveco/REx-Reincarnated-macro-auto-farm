@@ -1,9 +1,14 @@
 MsgBox, "
 (
 F7 = Start and restart If the script stopped due to finding a rare ore, and you (player) already collected it, use this to get the script going again
+K = Pause the AutoJump
 Y = Exit
 )"
 
+k::
+Global stop := 1
+
+Return
 
 y::
 Exitapp
@@ -20,6 +25,36 @@ Global Layer := 85
 ;Marble = 86
 ;Mantle = 87
 ;Core = 88
+
+;;;;;;;;;;;;;;;;;;;;;;;;VAR
+
+#Include VA.ahk
+#SingleInstance, Force
+audioMeter := VA_GetAudioMeter()
+VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
+VA_GetDevicePeriod("capture", devicePeriod)
+
+Global lolo := 0
+x := A_screenWidth
+y := A_screenHeight
+pos1 := x/2
+pos2 := y/2
+Random gg, 45, 100
+Random ez, 1500, 8900
+Random cutie, 500, 3333
+Random PORRA, 2500, 3750
+Random LL, 750, 1750
+Random FastMouseMove, 10, 511
+Random meno, 50000, 100000
+
+Global Laila = 0
+Global Main := 1
+Global bb := 12
+Global reseting := 1
+global stop := 0
+Global P1 := 0
+
+;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
 if P1 = 0
 {
@@ -63,7 +98,7 @@ if (peakValue>.0005)
 {
 Send, {w up}
 Click, Left, up
-AutoClick()
+AutoJump()
 }
 }
 
@@ -228,7 +263,7 @@ Click, Left, Up
 
 ;;;;;;;;;;;;;;;;;;;
 
-AutoClick()
+AutoJump()
 {
 
 Send {o down}
@@ -237,7 +272,11 @@ Send {o up}
 
 loop
 {
-MouseClick, left, pos1, pos2
+Random meno, 50000, 100000
+
+Send {space down}
+Sleep, meno
+Send {space up}
 Sleep, meno
 } until stop = 1
 
@@ -245,6 +284,10 @@ Sleep, meno
 
 EquipAll()
 {
+
+Random FastMouseMove, 10, 511
+Random LL, 750, 1750
+
 Send {2 down}
 Sleep, LL
 Click, Left, down
@@ -347,20 +390,6 @@ Send {> up}
 Send {i down}{i up}
 }
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;VAR
-
-#Include VA.ahk
-#SingleInstance, Force
-audioMeter := VA_GetAudioMeter()
-VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
-VA_GetDevicePeriod("capture", devicePeriod)
-
-Global lolo := 0
-x := A_screenWidth
-y := A_screenHeight
-pos1 := x/2
-pos2 := y/2
 Random gg, 45, 100
 Random ez, 1500, 8900
 Random cutie, 500, 3333
@@ -368,12 +397,3 @@ Random PORRA, 2500, 3750
 Random LL, 350, 1750
 Random FastMouseMove, 10, 511
 Random meno, 50000, 100000
-
-Global Laila = 0
-Global Main := 1
-Global bb := 12
-Global reseting := 1
-global stop := 0
-Global P1 := 0
-
-;;;;;;;;;;;;;;;;;;;;;;;;VAR
