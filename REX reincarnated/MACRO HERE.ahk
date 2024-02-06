@@ -1,18 +1,10 @@
 MsgBox, "
 (
-F7 = Start and restart If the script stopped due to finding a rare ore, and you (player) already collected it, use this to get the script going again
-K = Pause the AutoJump
+F7 = Start
 Y = Exit
 )"
 
-k::
-Global stop := 1
-Send {w up}
-Click, Left, up
-Return
-
 y::
-Click, Left, up
 Exitapp
 return
 
