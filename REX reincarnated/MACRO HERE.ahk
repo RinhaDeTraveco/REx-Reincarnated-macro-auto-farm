@@ -7,10 +7,12 @@ Y = Exit
 
 k::
 Global stop := 1
-
+Send {w up}
+Click, Left, up
 Return
 
 y::
+Click, Left, up
 Exitapp
 return
 
