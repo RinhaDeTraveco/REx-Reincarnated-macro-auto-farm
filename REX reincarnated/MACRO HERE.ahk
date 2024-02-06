@@ -1,3 +1,10 @@
+#Include VA.ahk
+#SingleInstance, Force
+audioMeter := VA_GetAudioMeter()
+VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
+VA_GetDevicePeriod("capture", devicePeriod)
+return
+
 MsgBox, "
 (
 F7 = Start
@@ -10,7 +17,7 @@ return
 
 f7::     ;;;;;;;;;;TURN ON
 
-Global Layer := 85
+Global Layer := 87
 
 ;Basalt = 82
 ;Granite = 83
@@ -21,12 +28,6 @@ Global Layer := 85
 ;Core = 88
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
-
-#Include VA.ahk
-#SingleInstance, Force
-audioMeter := VA_GetAudioMeter()
-VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
-VA_GetDevicePeriod("capture", devicePeriod)
 
 Global lolo := 0
 x := A_screenWidth
