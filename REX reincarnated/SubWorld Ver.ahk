@@ -1,4 +1,4 @@
-﻿#Include VA.ahk
+#Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
@@ -6,10 +6,15 @@ VA_GetDevicePeriod("capture", devicePeriod)
 
 MsgBox, 
 (
+
+always remember to put the CORRECT number of seconds you want in NUMBER 0 (how many seconds do you want to dig  before the real mining starts)
+
 F7 = Start
 Y = Exit
 (if you got stuck while going to the mine, re-enter on the game. do it until it work)
 )
+
+Global number0 := 220
 
 y::
 exitapp
@@ -72,7 +77,7 @@ Click, Left, up
 }
 }
 
-} until count = 200
+} until count = number0
 
 MouseMove, 500, 600, 0
 Click, Right, down
