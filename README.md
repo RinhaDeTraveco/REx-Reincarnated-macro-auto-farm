@@ -1,16 +1,18 @@
 # HOW TO USE
 
-1 - Press the windows button
+1 - download AHK (https://www.autohotkey.com)
 
-2 - search Roblox Player and open file location
+2 - Press the windows button
 
-3 - Right click and open file location again
+3 - search Roblox Player and open file location
 
-4 - Contente > sounds > dele all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
+4 - Right click and open file location again
 
-5 - put your pc volume on MAX and roblox volume on MAX. 
+5 - Contente > sounds > dele all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
 
-6 - ONLY USE AT PRIVATE SERVER
+6 - put your pc volume on MAX and roblox volume on MAX. 
+
+7 - ONLY USE AT PRIVATE SERVER
 
 # IN GAME CONFIG
 
