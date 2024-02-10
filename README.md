@@ -12,7 +12,9 @@
 
 6 - put your pc volume on MAX and roblox volume on MAX. 
 
-7 - ONLY USE AT PRIVATE SERVER
+7 - Disable performance stats
+
+8 - ONLY USE AT PRIVATE SERVER
 
 # IN GAME CONFIG
 
