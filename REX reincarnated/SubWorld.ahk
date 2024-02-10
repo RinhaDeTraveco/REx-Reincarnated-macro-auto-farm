@@ -1,4 +1,4 @@
-﻿#Include VA.ahk
+#Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
@@ -101,12 +101,11 @@ count := count + 1
 if count = number0
 {
 Click, Left, up
+Part1 := 0
+Part2 := 1
 }
 
 } until count = number0 ; downing mine end loop
-
-Part1 := 0
-Part2 := 1
 
 } ; going to mine
 
