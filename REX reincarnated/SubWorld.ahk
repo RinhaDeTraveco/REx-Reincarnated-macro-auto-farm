@@ -42,6 +42,8 @@ Random cutie, 500, 3333
 Random PORRA, 2500, 3750
 Random LL, 750, 1750
 Random meno, 50000, 100000
+Random mommy, 10, 500
+Random MyLove, 6, 6
 
 Global Laila := 0
 Global Main := 1
@@ -82,12 +84,20 @@ Click, Left, down
 lolo := 1
 }
 
+if bock := 10
+{
+loop 10
+{
+
 Text:="|<>*125$69.zzzzzzzzzzzzzzzzzzzzzzzkzzyTy7znzzynzynzozyzzzrMUW0yQU2AMyuE6mTkY6w+HrE6KHzYVq1kSmQ6mTooCYCTksUmEy61q4MzzwzzzzzzzzzzzbzzzzzzzzzzzzzzzzzzzzU"
 if (ok:=FindText(X, Y, 0, 0, 1365, 71, 0, 0, Text))
 {
 Send {w down}
-Sleep, 15
+Sleep, 19
 Send {w up}
+}
+}
+bock := 0
 }
 
 loop
@@ -164,6 +174,7 @@ count := 0
 lolo := 0
 Part1 := 1
 start := 1
+bock := 10
 
 } ;Mine Reset
 
@@ -236,6 +247,13 @@ Sleep, PORRA
 MouseMove, 0, 65, 7, R
 }
 
+LClick()
+{
+Click, Left, down
+Sleep, mommy
+Click, Left, down
+}
+
 EquipAll()
 {
 
@@ -293,30 +311,127 @@ Send {1 up}
 
 AutoJump()
 {
-
-Send {o down}
-Sleep, PORRA
-Send {o up}
-
 loop
 {
-Random meno, 50000, 100000
 
-Send {space down}
+Random gg, 45, 100
+Random ez, 1500, 8900
+Random cutie, 500, 3333
+Random PORRA, 2500, 3750
+Random LL, 750, 1750
+Random meno, 50000, 100000
+Random MyLove, 1, 6
+x := A_screenWidth - 100
+y := A_screenHeight - 100
+Random DarkDex, 50, x
+Random Mozaum, 50, y
+
+if MyLove = 1
+{
+Send {w down}
+Sleep, cutie
+Send {w up}
+
+Send {a down}
+Sleep, LL
+Send {a up}
+
+Send {s down}
+Sleep, ez
+Send {s up}
+
+Send {d down}
+Sleep, PORRA
+Send {d up}
 Sleep, meno
-Send {space up}
+}
+
+if MyLove = 2
+{
+Send {d down}
+Sleep, cutie
+Send {d up}
+
+Send {s down}
+Sleep, LL
+Send {s up}
+
+Send {a down}
+Sleep, ez
+Send {a up}
+
+Send {w down}
+Sleep, PORRA
+Send {w up}
 Sleep, meno
-} until stop = 1
+}
+
+if MyLove = 3
+{
+Send {s down}
+Sleep, cutie
+Send {s up}
+
+Send {w down}
+Sleep, LL
+Send {w up}
+
+Send {a down}
+Sleep, ez
+Send {a up}
+
+Send {d down}
+Sleep, PORRA
+Send {d up}
+Sleep, meno
+}
+
+if MyLove = 4
+{
+Send {a down}
+Sleep, cutie
+Send {a up}
+
+Send {d down}
+Sleep, LL
+Send {d up}
+
+Send {w down}
+Sleep, ez
+Send {w up}
+
+Send {s down}
+Sleep, PORRA
+Send {s up}
+Sleep, meno
+}
+
+if MyLove = 5
+{
+Send {l down}
+Sleep, LL
+Send {l up}
+Sleep, PORRA
+Send {l down}
+Sleep, ez
+Sleep, meno
+Send {l up}
 
 }
 
-Random FastMouseMove, 10, 511
-
-LClick()
+if MyLove = 6
 {
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+Random DarkDex, 50, x
+Random Mozaum, 50, y
+Random gg, 45, 100
+
+Click, Right, down
+MouseMove, DarkDex, Mozaum, gg
+Sleep, meno
+Click, Right, up
+}
+
+}
 }
 
 ;;;;;;;;;;;;;;;;;;;FUNC
