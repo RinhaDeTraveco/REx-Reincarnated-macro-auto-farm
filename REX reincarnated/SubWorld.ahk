@@ -17,7 +17,7 @@ Y = Exit
 
 
 
-Global number0 := 190
+Global number0 := 200
 
 
 
@@ -53,24 +53,28 @@ Global restart := 10
 Global Part1 := 1
 Global Part2 := 0
 Global lolo := 0
+Global start := 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
 loop
-{
+{ ; MAIN LOOP
 
 if Part1 = 1 ; going to mine
 {
 
+bb := 12
+
+if start = 1
+{
 count := 0
 lolo := 0
 
 Spawn()
 Sleep, cutie
 EquipAll()
-
-loop ; downing mine
-{
+Global start := 0
+}
 
 if lolo = 0
 {
@@ -86,28 +90,25 @@ Sleep, 15
 Send {w up}
 }
 
+loop
+{
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
 if (peakValue>.0005)
 {
 Click, Left, up
 }
 
-loop
-{
 Sleep, 1000
 count := count + 1
 } until count = number0
 
-if count = number0
-{
+
 Click, Left, up
 Part1 := 0
 Part2 := 1
-}
-
-} until count = number0 ; downing mine end loop
 
 } ; going to mine
+
 
 if Part2 = 1 ; mining part
 { ;Part2
@@ -122,6 +123,14 @@ Click, Left, down
 Send, {w down}
 MouseMove, pos1, pos2, 69
 bb = 11
+}
+
+Laila := Laila + 1
+if Laila = 10000
+{
+Send {space down}
+Send {space up}
+Laila := 0
 }
 
 Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzPzzzzDrVsy4P3ltghjX6C8TS39s1g6HoKqy9+mHxvBbgqqPD0PPtgbNDrgUSnPN0wFhjg304zSn/vBhaLtCqytOGnxvCDgqqQTYvPvlXX7zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzU"
@@ -154,11 +163,23 @@ Part2 := 0
 count := 0
 lolo := 0
 Part1 := 1
+start := 1
 
 } ;Mine Reset
+
+VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
+if (peakValue>.0005)
+{
+Click, Left, up
+Send {w down}
+Send {w up}
+AutoJump()
+}
+
+
 } ;Part2
 
-} ; MAIN LOOP
+} until Main = 99  ; MAIN LOOP
 
 
 
