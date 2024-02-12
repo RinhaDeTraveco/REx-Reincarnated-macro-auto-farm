@@ -1,6 +1,7 @@
 # HOW TO USE 
 (sorry for making a so shit script) (that's not a joke)
 
+
 1 - download AHK (https://www.autohotkey.com)
 
 2 - move the folder "lib" (DONT RENAME IT) to "C:\Users\Your User Name\Documents\AutoHotkey"
