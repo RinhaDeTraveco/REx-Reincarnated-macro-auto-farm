@@ -1,4 +1,5 @@
-# HOW TO USE (SORRY FOR MAKING A SO SHIT SCRIPT) (that's not a joke)
+# HOW TO USE 
+(sorry for making a so shit script) (that's not a joke)
 
 1 - download AHK (https://www.autohotkey.com)
 
