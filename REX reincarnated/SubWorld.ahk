@@ -11,21 +11,20 @@ DISABLE THE "ore sound" option, only "spawn sound" is usefull
 always remember to put the CORRECT number of seconds you want in NUMBER0 (how many seconds do you want to dig  before the real mining starts. NUMBER0 at line 20)
 
 F7 = Start
-Y = Exit
+J = Exit app 
+Y = pause/unpause (use "." or/and "," to put the camera on straight line)
+
 (if you got stuck while going to the mine, re-enter on the game. do it until it work)
 )
 
 
 
-Global number0 := 200
+Global number0 := 220
 
-
-
-y::
-
-Send {w up}
+j::
 Click, Left, up
-exitapp
+Send, {w up}
+Exitapp
 return
 
 f7::
@@ -41,9 +40,9 @@ Random ez, 1500, 8900
 Random cutie, 500, 3333
 Random PORRA, 2500, 3750
 Random LL, 750, 1750
-Random meno, 50000, 100000
+Random meno, 30000, 100000
 Random mommy, 10, 500
-Random MyLove, 6, 6
+Random MyLove, 1, 6
 
 Global Laila := 0
 Global Main := 1
@@ -56,6 +55,7 @@ Global Part1 := 1
 Global Part2 := 0
 Global lolo := 0
 Global start := 1
+Global yy := 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
@@ -95,6 +95,7 @@ if (ok:=FindText(X, Y, 0, 0, 1365, 71, 0, 0, Text))
 Send {w down}
 Sleep, 19
 Send {w up}
+Sleep, 1500
 }
 }
 bock := 0
@@ -120,7 +121,10 @@ Part2 := 1
 } ; going to mine
 
 
+;              PART 2
 if Part2 = 1 ; mining part
+;              PART 2
+
 { ;Part2
 if bb = 12
 {
@@ -181,6 +185,7 @@ bock := 10
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
 if (peakValue>.0005)
 {
+global james := 0
 Click, Left, up
 Send {w down}
 Send {w up}
@@ -190,13 +195,32 @@ AutoJump()
 
 } ;Part2
 
+y::
+
+Global james := 1
+
+
+yy := yy + 1
+
+if yy = 1
+{
+Send {w down}
+Click, Left, up
+}
+
+if yy = 2
+{
+Part1 = 0
+Part2 = 1
+bb = 12
+yy := 0
+}
+
+return
+
 } until Main = 99  ; MAIN LOOP
 
-
-
-
-
-
+return
 
 
 
@@ -244,7 +268,7 @@ Sleep, 4290
 Send {w up}
 Send {i down}{i up}{i down}{i up}
 Sleep, PORRA
-MouseMove, 0, 65, 7, R
+MouseMove, 0, 69, 7, R
 }
 
 LClick()
@@ -431,7 +455,7 @@ Sleep, meno
 Click, Right, up
 }
 
-}
+} until james = 1
 }
 
 ;;;;;;;;;;;;;;;;;;;FUNC
