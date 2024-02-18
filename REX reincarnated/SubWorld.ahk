@@ -27,6 +27,7 @@ Send, {w up}
 Exitapp
 return
 
+
 f7::
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
@@ -140,7 +141,7 @@ bb = 11
 }
 
 Laila := Laila + 1
-if Laila = 10000
+if Laila >= 10000
 {
 Send {space down}
 Send {space up}
@@ -159,7 +160,7 @@ Send {o up}
 Send, {w up}
 Click, Left, up
 
-Sleep, 55000
+Sleep, 130000
 
 Send {esc down}
 Sleep, cutie
@@ -187,7 +188,6 @@ if (peakValue>.0005)
 {
 global james := 0
 Click, Left, up
-Send {w down}
 Send {w up}
 AutoJump()
 }
@@ -195,33 +195,37 @@ AutoJump()
 
 } ;Part2
 
+if yy = 1
+{
+Send {w down}
+Send {w up}
+Click, Left, down
+Click, Left, up
+yy := 2
+}
+
+if yy >= 3
+{
+Part1 = 0
+Part2 = 1
+yy := 0
+Click, Left, down
+Send, {w down}
+}
+
+} until Main = 99  ; MAIN LOOP
+
 y::
 
 Global james := 1
 
-
 yy := yy + 1
 
-if yy = 1
-{
-Send {w down}
-Click, Left, up
-}
-
-if yy = 2
-{
-Part1 = 0
-Part2 = 1
-bb = 12
-yy := 0
-}
+MsgBox, %yy%
 
 return
 
-} until Main = 99  ; MAIN LOOP
-
 return
-
 
 
 
@@ -343,7 +347,6 @@ Random ez, 1500, 8900
 Random cutie, 500, 3333
 Random PORRA, 2500, 3750
 Random LL, 750, 1750
-Random meno, 50000, 100000
 Random MyLove, 1, 6
 x := A_screenWidth - 100
 y := A_screenHeight - 100
@@ -367,7 +370,7 @@ Send {s up}
 Send {d down}
 Sleep, PORRA
 Send {d up}
-Sleep, meno
+Sleep, PORRA
 }
 
 if MyLove = 2
@@ -387,7 +390,7 @@ Send {a up}
 Send {w down}
 Sleep, PORRA
 Send {w up}
-Sleep, meno
+Sleep, PORRA
 }
 
 if MyLove = 3
@@ -407,7 +410,7 @@ Send {a up}
 Send {d down}
 Sleep, PORRA
 Send {d up}
-Sleep, meno
+Sleep, PORRA
 }
 
 if MyLove = 4
@@ -427,7 +430,7 @@ Send {w up}
 Send {s down}
 Sleep, PORRA
 Send {s up}
-Sleep, meno
+Sleep, PORRA
 }
 
 if MyLove = 5
@@ -438,7 +441,7 @@ Send {l up}
 Sleep, PORRA
 Send {l down}
 Sleep, ez
-Sleep, meno
+Sleep, PORRA
 Send {l up}
 
 }
@@ -449,10 +452,10 @@ Random DarkDex, 50, x
 Random Mozaum, 50, y
 Random gg, 45, 100
 
-Click, Right, down
+Click, Left, down
 MouseMove, DarkDex, Mozaum, gg
-Sleep, meno
-Click, Right, up
+Sleep, ez
+Click, Left, up
 }
 
 } until james = 1
