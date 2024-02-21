@@ -1,38 +1,46 @@
-﻿#Include VA.ahk
+#Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
 VA_GetDevicePeriod("capture", devicePeriod)
 
+femboy := "
+(
+TOP LAYER = 81 | Obsidian = 85
+Basalt = 82        | Marble = 86
+Granite = 83      | Mantle = 87
+Diorite = 84       | Core = 88
+Type the Number of your Layer
+
+)"
+
+InputBox, Layer, Select your Layer, %femboy%
+
 MsgBox, 
 (
 
-DISABLE THE "ore sound" option, only "spawn sound" is usefull)
+DISABLE THE "ore sound" option, only "spawn sound" is usefull.
 
 F7 = Start
-Y = Exit
-(if you got stuck while going to the mine, re-enter on the game. do it until it work)
+J = Exit app 
+Y = pause/unpause (use "." or/and "," to put the camera on straight line)
+
+(if you got stuck while going to the mine, reset, align your camera and re-execute the script. OR re-enter on the game. do it until it work)
 )
 
-y::
+
+Global Layer := Layer
+
+j::
+Click, Left, up
+Send, {w up}
 Exitapp
 return
 
-f7::     ;;;;;;;;;;TURN ON
-
-Global Layer := 88
-
-;Basalt = 82
-;Granite = 83
-;Diorite = 84
-;Obsidian = 85
-;Marble = 86
-;Mantle = 87
-;Core = 88
+f7::
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
-Global lolo := 0
 x := A_screenWidth
 y := A_screenHeight
 pos1 := x/2
@@ -42,82 +50,124 @@ Random ez, 1500, 8900
 Random cutie, 500, 3333
 Random PORRA, 2500, 3750
 Random LL, 750, 1750
-Random FastMouseMove, 10, 511
-Random meno, 50000, 100000
+Random meno, 30000, 100000
+Random mommy, 350, 500
+Random MyLove, 1, 6
 
-Global Laila = 0
+Global Laila := 0
 Global Main := 1
 Global bb := 12
 Global reseting := 1
-global stop := 0
+Global stop := 0
 Global P1 := 0
+Global restart := 10
+Global Part1 := 1
+Global Part2 := 0
+Global lolo := 0
+Global start := 1
+Global yy := 0
+Random meow, 17000, 26656
+
+if Layer = 81
+{
+Global Part1 = 0
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
-if P1 = 0
+Send {i down}{i up}
+
+Loop
+{ ; MAIN LOOP
+
+if Part1 = 0
 {
+MouseMove, 500, 600, 0
+Click, Right, down
+Sleep, mommy
+MouseMove, 0, 33, 100, R
+Click, Right, Up
+DSpawn()
+
+EquipAll()
+Click, Left, down
+Sleep, LL
+
+loop 10
+Text:="|<>*125$69.zzzzzzzzzzzzzzzzzzzzzzzkzzyTy7znzzynzynzozyzzzrMUW0yQU2AMyuE6mTkY6w+HrE6KHzYVq1kSmQ6mTooCYCTksUmEy61q4MzzwzzzzzzzzzzzbzzzzzzzzzzzzzzzzzzzzU"
+if (ok:=FindText(X, Y, 0, 0, 1365, 71, 0, 0, Text))
+{
+Send {w down}
+Send {a down}
+Sleep, 19
+Send {w up}
+Send {a up}
+Sleep, 850
+}
+
+Sleep, meow
+Click, Left, up
+
+Part1 = 99
+Part2 = 1
+
+}
+
+if Part1 = 1
+{
+
 MouseMove, 500, 600
 Sleep, PORRA
 Click, Right, down
 MouseMove, 0, -8, 100, R
 Click, Right, Up
 
-Sleep, PORRA
-
 Spawn()
 
-Sleep, PORRA
-
 Button()
+Sleep, LL
+Button()
+Sleep, LL
 Button()
 
-Sleep, 4500
+Part1 = 99
+Part2 = 1
 
-Send {> down}
-Sleep, FastMouseMove
-Send {> up}
-
-Sleep, cutie
-
-EquipAll()
-
-Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
-
-Global P1 := 1
 }
 
-Loop
+if Part2 = 1
 {
-
-if reseting = 1
-{
-VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
-if (peakValue>.0005)
-{
-Send, {w up}
-Click, Left, up
-AutoJump()
-}
-}
 
 if bb = 12
 {
+MouseMove, 500, 600, 0
+Click, Right, down
+Sleep, 500
+MouseMove, 0, -17, 100, R
+Click, Right, Up
 Click, Left, down
 Send, {w down}
+MouseMove, pos1, pos2, 69
 bb = 11
 }
 
-Text:="|<>*42$205.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzUPzzzyzzzzvPzzzzTjzkQTzzzzzzjzzzzzsBzzzzzzzzzhzzzzbzzyA7zzzzzzrzzzzzzS7XsFgD7amqyAMsVv3zCNwQQQQD37zzzzzj1Yw0q39u/PT4ZN9xUz7QygYga31fzzzzzrgqSnPNgw1hjamRYyqTliTCkwvNClzzzzzvqEDNhgUS8qrq1U2TPDwnDk0SRgbQTzzzzxvAjgqqNT4vPvZd/DhbkMDoZZYqMB/zzzzyxb7qPPCDmRhxsllXqnsSDssssvC6Bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs"
-
-if (ok:=FindText(X, Y, 155, 22, 1123, 89, 0, 0, Text))
+Laila := Laila + 1
+if Laila >= 10000
 {
+Send {space down}
+Send {space up}
+Laila := 0
+}
+
+Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzPzzzzDrVsy4P3ltghjX6C8TS39s1g6HoKqy9+mHxvBbgqqPD0PPtgbNDrgUSnPN0wFhjg304zSn/vBhaLtCqytOGnxvCDgqqQTYvPvlXX7zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzU"
+
+if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
+{ ;Mine   
 
 Send, {w up}
 Click, Left, up
 
-reseting = 0
-
-Sleep, 45000
+Sleep, 130000
 
 Send {esc down}
 Sleep, cutie
@@ -131,69 +181,77 @@ Send {Enter down}
 Sleep, cutie
 Send {Enter up}
 
-Sleep, 5000
+Part2 := 0
+count := 0
+lolo := 0
 
-Send {> down} 
-Sleep, gg 
-Send {> up}
-Send {> down} 
-Sleep, gg 
-Send {> up}
-Send {> down} 
-Sleep, gg 
-Send {> up}
-Send {> down} 
-Sleep, gg 
-Send {> up}
-Sleep, cutie
-Send {o down} 
-sleep, 1200
-Send {o up}
-Send {o down} 
-sleep, 600
-Send {o up}
-Send {o down} 
-sleep, 950
-Send {o up}
-
-Spawn()
-
-reseting = 1
-
-Sleep, PORRA
-
-Button()
-Button()
-
-Send {> down}
-Send {> up}
-
-Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
-
-EquipAll()
-
-bb = 12
+if Layer = 81
+{
+Part1 = 0
+}
+else
+{
+Part1 = 1
 }
 
-if stop = 1
+start := 1
+bock := 10
+
+} ;Mine Reset
+
+VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
+if (peakValue>.0005)
+{
+global james := 0
+Click, Left, up
+Send {w up}
+AutoJump()
+}
+
+
+} ;Part2
+
+if yy = 1
 {
 Send {w down}
-global stop := 0
+Send {w up}
+Click, Left, down
+Click, Left, up
+yy = 2
 }
 
-lolo := (lolo +1)
-
-if lolo = 1000
+if yy >= 3
 {
-Send, {Space down}
-Sleep, FastMouseMove
-Send, {Space up}
-lolo := 0
+Part1 = 0
+Part2 = 1
+yy = 0
+Click, Left, down
+Send, {w down}
 }
 
-} until Main = 2
+} ; MAIN LOOP
+
+y::
+
+Global james := 1
+
+yy := yy + 1
+
+MsgBox, %yy%
+
+return
+
+return
+
+
 
 ;;;;;;;;;;;;;;;;;;;FUNCTIONS
+
+
+
+
+
+
 
 Button()
 {
@@ -260,6 +318,63 @@ Click, Left, Up
 }
 
 ;;;;;;;;;;;;;;;;;;;
+
+DSpawn()
+{
+Send {< down}{< up}{< down}{< up}{< down}{< up}{< down}{< up}
+
+Send {LShift down}
+Sleep, mommy
+Send {LShift up}
+
+Send {w down}
+Sleep, 16816
+Send {w up}
+
+Send {a down}
+Sleep, 2239
+Send {a up}
+Sleep, LL
+Send {s down}
+Sleep, 2191
+Send {s up}
+Sleep, LL
+Send {a down}
+Sleep, 15
+Send {a up}
+}
+
+Spawn()
+{
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+
+Send {w down}
+Sleep, 1365
+Send {w up}
+
+Send {< down}
+Sleep, FastMouseMove
+Send {< up}
+
+Send {w down}
+Sleep, 3545
+Send {w up}
+
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+
+}
 
 AutoJump()
 {
@@ -389,115 +504,61 @@ Click, Right, up
 EquipAll()
 {
 
-Random FastMouseMove, 10, 511
-Random LL, 750, 1750
-
 Send {2 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {2 up}
 Send {3 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {3 up}
 Send {4 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {4 up}
 Send {5 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {5 up}
 Send {6 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {6 up}
 Send {7 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {7 up}
 Send {8 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {8 up}
 Send {9 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {9 up}
 Send {0 down}
 Sleep, LL
-Click, Left, down
-Sleep, FastMouseMove
-Click, Left, up
+LClick()
 Sleep, LL
 Send {0 up}
 Sleep, LL
+LClick()
+Sleep, LL
 Send {1 down}
-Sleep, FastMouseMove
 Send {1 up}
 }
 
-Spawn()
+LClick()
 {
-Send {> down}
-Sleep, FastMouseMove
-Send {> up}
-
-Send {> down}
-Sleep, FastMouseMove
-Send {> up}
-
-Send {> down}
-Sleep, FastMouseMove
-Send {> up}
-
-Send {w down}
-Sleep, 1345
-Send {w up}
-
-Send {< down}
-Sleep, FastMouseMove
-Send {< up}
-
-Send {w down}
-Sleep, 1545
-Send {w up}
-
-Send {> down}
-Sleep, FastMouseMove
-Send {> up}
-
-Send {i down}{i up}
+Click, Left, down
+Sleep, mommy
+Click, Left, down
 }
-
-Random gg, 45, 100
-Random ez, 1500, 8900
-Random cutie, 500, 3333
-Random PORRA, 2500, 3750
-Random LL, 350, 1750
-Random FastMouseMove, 10, 511
-Random meno, 50000, 100000
