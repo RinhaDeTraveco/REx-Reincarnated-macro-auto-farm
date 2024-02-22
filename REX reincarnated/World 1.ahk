@@ -1,4 +1,4 @@
-#Include VA.ahk
+ #Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
@@ -19,6 +19,7 @@ InputBox, Layer, Select your Layer, %femboy%
 MsgBox, 
 (
 
+DISABLE SHIFT LOCK
 DISABLE THE "ore sound" option, only "spawn sound" is usefull.
 
 F7 = Start
@@ -64,7 +65,6 @@ Global restart := 10
 Global Part1 := 1
 Global Part2 := 0
 Global lolo := 0
-Global start := 1
 Global yy := 0
 Random meow, 17000, 26656
 
@@ -80,20 +80,43 @@ Send {i down}{i up}
 Loop
 { ; MAIN LOOP
 
+if yy = 1
+{
+Send {w down}
+Send {w up}
+Click, Left, down
+Click, Left, up
+yy = 2
+MsgBox, Paused (Press Y again to unpause)
+}
+
+if yy >= 3
+{
+Part1 = 0
+Part2 = 1
+yy = 0
+Click, Left, down
+Send, {w down}
+}
+
 if Part1 = 0
 {
-MouseMove, 500, 600, 0
+MouseMove, 500, gg, 0
 Click, Right, down
 Sleep, mommy
-MouseMove, 0, 33, 100, R
+MouseMove, 0, 33, gg, R
 Click, Right, Up
 DSpawn()
+
+MouseMove, pos1, pos2, gg
+MouseMove, 0, 60, gg, R
 
 EquipAll()
 Click, Left, down
 Sleep, LL
 
 loop 10
+{
 Text:="|<>*125$69.zzzzzzzzzzzzzzzzzzzzzzzkzzyTy7znzzynzynzozyzzzrMUW0yQU2AMyuE6mTkY6w+HrE6KHzYVq1kSmQ6mTooCYCTksUmEy61q4MzzwzzzzzzzzzzzbzzzzzzzzzzzzzzzzzzzzU"
 if (ok:=FindText(X, Y, 0, 0, 1365, 71, 0, 0, Text))
 {
@@ -102,7 +125,8 @@ Send {a down}
 Sleep, 19
 Send {w up}
 Send {a up}
-Sleep, 850
+}
+Sleep, LL
 }
 
 Sleep, meow
@@ -164,38 +188,42 @@ Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzP
 if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
 { ;Mine   
 
+if Layer = 81
+{
+Send {< down}{< up}{< down}{< up}{< down}{< up}{< down}{< up}
+}
+
 Send, {w up}
 Click, Left, up
 
-Sleep, 130000
+Sleep, 90000
 
 Send {esc down}
-Sleep, cutie
+Sleep, LL
 Send {esc up}
-Sleep, cutie
+Sleep, LL
 Send {r down}
-Sleep, cutie
+Sleep, LL
 Send {r up}
-Sleep, cutie
+Sleep, LL
 Send {Enter down}
-Sleep, cutie
+Sleep, LL
 Send {Enter up}
 
-Part2 := 0
-count := 0
-lolo := 0
+Sleep, cutie
+
+Part2 = 0
+count = 0
+lolo = 0
 
 if Layer = 81
 {
 Part1 = 0
 }
-else
+if Layer >= 82
 {
 Part1 = 1
 }
-
-start := 1
-bock := 10
 
 } ;Mine Reset
 
@@ -208,26 +236,7 @@ Send {w up}
 AutoJump()
 }
 
-
 } ;Part2
-
-if yy = 1
-{
-Send {w down}
-Send {w up}
-Click, Left, down
-Click, Left, up
-yy = 2
-}
-
-if yy >= 3
-{
-Part1 = 0
-Part2 = 1
-yy = 0
-Click, Left, down
-Send, {w down}
-}
 
 } ; MAIN LOOP
 
@@ -236,8 +245,6 @@ y::
 Global james := 1
 
 yy := yy + 1
-
-MsgBox, %yy%
 
 return
 
@@ -410,7 +417,6 @@ Send {s up}
 Send {d down}
 Sleep, PORRA
 Send {d up}
-Sleep, meno
 }
 
 if MyLove = 2
@@ -430,7 +436,6 @@ Send {a up}
 Send {w down}
 Sleep, PORRA
 Send {w up}
-Sleep, meno
 }
 
 if MyLove = 3
@@ -450,7 +455,7 @@ Send {a up}
 Send {d down}
 Sleep, PORRA
 Send {d up}
-Sleep, meno
+
 }
 
 if MyLove = 4
@@ -470,7 +475,7 @@ Send {w up}
 Send {s down}
 Sleep, PORRA
 Send {s up}
-Sleep, meno
+
 }
 
 if MyLove = 5
@@ -481,16 +486,15 @@ Send {l up}
 Sleep, PORRA
 Send {l down}
 Sleep, ez
-Sleep, meno
 Send {l up}
 
 }
 
 if MyLove = 6
 {
-Random DarkDex, 50, x
-Random Mozaum, 50, y
-Random gg, 45, 100
+Random DarkDex, 50, x ; random pos on X
+Random Mozaum, 50, y ; random pos on Y
+Random gg, 45, 100 
 
 Click, Right, down
 MouseMove, DarkDex, Mozaum, gg
@@ -498,7 +502,7 @@ Sleep, meno
 Click, Right, up
 }
 
-}
+} until james = 1
 }
 
 EquipAll()
