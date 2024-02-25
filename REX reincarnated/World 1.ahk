@@ -1,4 +1,4 @@
- #Include VA.ahk
+#Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
@@ -55,6 +55,7 @@ Random meno, 30000, 100000
 Random mommy, 350, 500
 Random MyLove, 1, 6
 
+Global start:= 1
 Global Laila := 0
 Global Main := 1
 Global bb := 12
@@ -79,25 +80,6 @@ Send {i down}{i up}
 
 Loop
 { ; MAIN LOOP
-
-if yy = 1
-{
-Send {w down}
-Send {w up}
-Click, Left, down
-Click, Left, up
-yy = 2
-MsgBox, Paused (Press Y again to unpause)
-}
-
-if yy >= 3
-{
-Part1 = 0
-Part2 = 1
-yy = 0
-Click, Left, down
-Send, {w down}
-}
 
 if Part1 = 0
 {
@@ -139,12 +121,20 @@ Part2 = 1
 
 if Part1 = 1
 {
-
-MouseMove, 500, 600
-Sleep, PORRA
+if start = 1
+{
+MouseMove, 500, 600, 0
 Click, Right, down
-MouseMove, 0, -8, 100, R
+Sleep, mommy
+MouseMove, 0, -44, gg, R
 Click, Right, Up
+MouseMove, 501, 601, 0
+Sleep, mommy
+Click, Right, down
+MouseMove, 0, 18, gg, R
+Click, Right, Up
+start = 0
+}
 
 Spawn()
 
@@ -154,6 +144,9 @@ Button()
 Sleep, LL
 Button()
 
+EquipAll()
+Send {> down}{> up}
+
 Part1 = 99
 Part2 = 1
 
@@ -162,16 +155,48 @@ Part2 = 1
 if Part2 = 1
 {
 
+if yy = 1
+{
+Send {w down}
+Send {w up}
+Click, Left, down
+Click, Left, up
+yy := 2
+MsgBox, You Paused The Script, Press Y Again To Unpause
+}
+
+if yy >= 3
+{
+Part1 = 99
+Part2 = 1
+yy := 0
+
+MouseMove, 500, 600, 0
+Click, Right, down
+Sleep, mommy
+MouseMove, 0, -44, gg, R
+Click, Right, Up
+MouseMove, 501, 601, 0
+Sleep, mommy
+Click, Right, down
+MouseMove, 0, 18, gg, R
+Click, Right, Up
+
+}
+
 if bb = 12
+{
+if Layer = 81
 {
 MouseMove, 500, 600, 0
 Click, Right, down
 Sleep, 500
 MouseMove, 0, -17, 100, R
 Click, Right, Up
+}
 Click, Left, down
 Send, {w down}
-MouseMove, pos1, pos2, 69
+MouseMove, pos1, pos2, gg/2
 bb = 11
 }
 
@@ -186,17 +211,19 @@ Laila := 0
 Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzPzzzzDrVsy4P3ltghjX6C8TS39s1g6HoKqy9+mHxvBbgqqPD0PPtgbNDrgUSnPN0wFhjg304zSn/vBhaLtCqytOGnxvCDgqqQTYvPvlXX7zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzU"
 
 if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
-{ ;Mine   
+{ ; Mine Reset
 
 if Layer = 81
 {
 Send {< down}{< up}{< down}{< up}{< down}{< up}{< down}{< up}
 }
 
+Sleep, 25000
+
 Send, {w up}
 Click, Left, up
 
-Sleep, 90000
+Sleep, 65000
 
 Send {esc down}
 Sleep, LL
@@ -210,11 +237,13 @@ Send {Enter down}
 Sleep, LL
 Send {Enter up}
 
+Sleep, 5200
 Sleep, cutie
 
 Part2 = 0
 count = 0
 lolo = 0
+bb = 12
 
 if Layer = 81
 {
@@ -222,10 +251,25 @@ Part1 = 0
 }
 if Layer >= 82
 {
+Sleep, PORRA
+
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+Send {> down}
+Sleep, FastMouseMove
+Send {> up}
+
 Part1 = 1
 }
 
-} ;Mine Reset
+} ; Mine Reset
 
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
 if (peakValue>.0005)
