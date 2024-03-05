@@ -1,4 +1,4 @@
-﻿#SingleInstance, Force
+#SingleInstance, Force
 #Include VA.ahk
 #SingleInstance, Force
 audioMeter := VA_GetAudioMeter()
@@ -78,7 +78,7 @@ EquipALL()
 
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 19, gg/5, R
+MouseMove, 0, 20, gg/5, R
 
 Click, Left, down
 Send, {w down}
