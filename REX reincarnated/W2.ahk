@@ -27,6 +27,10 @@ Send, {w up}
 Exitapp
 return
 
+y::
+yy := yy + 1
+return
+
 f7::
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR'S
@@ -60,6 +64,8 @@ Global lolo := 0
 Global yy := 0
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR'S
 
+CamStraight()
+Sleep, LL/1.5
 spawn()
 Sleep, LL
 button()
@@ -88,6 +94,7 @@ Loop
 
 if yy = 1
 {
+MsgBox, Paused
 IFoundABlock := 0
 Send {w down}
 Send {w up}
@@ -157,8 +164,14 @@ Send {Enter up}
 Sleep, 5200
 Sleep, cutie
 
+CamStraight()
+
 spawn()
-Sleep, LL
+Sleep, LL*2
+button()
+Sleep, LL*1.2
+button()
+Sleep, LL*1.5
 button()
 Send {< down}
 Sleep, LL
@@ -168,7 +181,7 @@ EquipALL()
 
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 19, gg/5, R
+MouseMove, 0, 22, gg/5, R
 
 Click, Left, down
 Send, {w down}
@@ -405,6 +418,16 @@ Gui, Destroy
 
 CamStraight()
 {
+
+Send {< down}
+Sleep, mommy
+Send {< up}
+Sleep, mommy
+Send {> down}
+Sleep, mommy
+Send {> up}
+Sleep, mommy
+
 MouseMove, 500, 600, 0
 Click, Right, down
 Sleep, mommy
@@ -424,74 +447,102 @@ Send {s down}
 Sleep, 600
 Send {s up}
 
+Sleep, FastMouseMove
+
 Send {a down}
 Sleep, 600
 Send {a up}
 
+Sleep, FastMouseMove
+
 Send {d down}
-Sleep, 150
+Sleep, 120
 Send {d up}
 
-Sleep, LL
-
-MouseMove, 500, 600, 0
-Click, Right, down
-Sleep, mommy
-MouseMove, 0, -44, gg, R
-Click, Right, Up
-MouseMove, 501, 601, 0
-Sleep, mommy
-Click, Right, down
-MouseMove, 0, 16, gg, R
-Click, Right, Up
-
-Sleep, LL
+Sleep, FastMouseMove*3
 
 Send {w down}
 Sleep, 3400
 Send {w up}
 
-Sleep, LL
+Sleep, FastMouseMove*2
 
 Send {d down}
 Sleep, 750
 Send {d up}
 
-Sleep, LL
+
+Sleep, FastMouseMove*2
 
 Send {s down}
 Sleep, 400
 Send {s up}
 
-Sleep, LL
 
-Send {d down}
-Sleep, 1830
-Send {w down}
-Sleep, 795
-Send {w up}
-Sleep, 1110
-Send {d up}
-
-Sleep, LL
-
-Send {w down}
-Sleep, 2202
-Send {w up}
-
-Sleep, LL
+Sleep, FastMouseMove*2
 
 Send {> down}
-Sleep, 25>
+Sleep, mommy
 Send {> up}
 
-Sleep, LL
+
+Sleep, FastMouseMove*2
+
+Send {> down}
+Sleep, mommy
+Send {> up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 1551
+Send {w up}
+
+Sleep, FastMouseMove*2
+
+Send {< down}
+Sleep, mommy
+Send {< up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 651
+Send {w up}
+
+Sleep, FastMouseMove*2
+
+Send {> down}
+Sleep, mommy
+Send {> up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 791
+Send {w up}
+
+Sleep, FastMouseMove*2
+
+Send {< down}
+Sleep, mommy
+Send {< up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 1351
+Send {a down}
+Sleep, mommy
+Send {a up}
+Send {w up}
+
+Sleep, FastMouseMove*2
 
 Send {i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 Send {o down}
 Sleep, gg
 Send {o up}
-Sleep, gg
 }
 
 button()
