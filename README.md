@@ -4,8 +4,6 @@
 
 1 - download AHK (https://www.autohotkey.com)
 
-2 - move the folder "lib" (DONT RENAME IT) to "C:\Users\OneDrive\Your User Name\Documents\AutoHotkey"
-
 3 - Press the windows button
 
 4 - search "Roblox Player" and open file location
