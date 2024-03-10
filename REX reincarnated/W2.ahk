@@ -1,6 +1,9 @@
 #SingleInstance, Force
+#Include %A_ScriptDir%\lib
 #Include VA.ahk
-#SingleInstance, Force
+#Include FindText.ahk
+#Include FindClick.ahk
+
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
 VA_GetDevicePeriod("capture", devicePeriod)
@@ -18,8 +21,6 @@ Global Layer = Layer
 Global MBOX = MBOX
 Global GuiClose = GuiClose
 return
-
-
 
 j::
 Click, Left, up
@@ -112,7 +113,7 @@ yy := 0
 CamStraight()
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 19, gg/5, R
+MouseMove, 0, 22, gg/5, R
 Send {w down}
 Sleep, LL
 Click, Left, down
@@ -161,7 +162,7 @@ Send {Enter down}
 Sleep, LL
 Send {Enter up}
 
-Sleep, 5200
+Sleep, meow
 Sleep, cutie
 
 CamStraight()
@@ -233,6 +234,7 @@ Screen := 2
 return
 
 DiscordConfig:
+MsgBox, NEVER WILL BE IMPLEMENTED (trash dev, trash person, no time, no brain)
 return
 
 GuiConfig:
@@ -361,7 +363,10 @@ RandomFunc:
 return
 
 TopLayer:
-IniWrite, Top, %A_WorkingDir%\YourConfigs.ini, Configs, Layer
+
+MsgBox, Not Working yet
+
+;IniWrite, Top, %A_WorkingDir%\YourConfigs.ini, Configs, Layer
 MBOXfunc()
 GuiClosefunc()
 return
@@ -412,7 +417,8 @@ GuiClosefunc()
 IniRead, GuiClose , %A_WorkingDir%\YourConfigs.ini, Configs, GuiClose
 if GuiClose = 2
 {
-Gui, Destroy
+WinGetTitle, TabName, A
+WinMinimize, %TabName%
 }
 }
 
@@ -444,13 +450,31 @@ spawn()
 {
 
 Send {s down}
-Sleep, 600
+Sleep, 250
 Send {s up}
 
 Sleep, FastMouseMove
 
 Send {a down}
-Sleep, 600
+Sleep, 2600
+Send {a up}
+
+Sleep, FastMouseMove
+
+Send {d down}
+Sleep, 790
+Send {d up}
+
+Sleep, FastMouseMove
+
+Send {s down}
+Sleep, 330
+Send {s up}
+
+Sleep, FastMouseMove
+
+Send {a down}
+Sleep, 990
 Send {a up}
 
 Sleep, FastMouseMove
