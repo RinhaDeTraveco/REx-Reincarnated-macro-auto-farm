@@ -66,7 +66,7 @@ Global yy := 0
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR'S
 
 CamStraight()
-Sleep, LL/1.5
+Sleep, LL
 spawn()
 Sleep, LL
 button()
@@ -133,7 +133,7 @@ Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzP
 if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
 { ; Mine Reset
 
-Sleep, meow
+Sleep, meow*5
 
 Click, Left, up
 Send {w up}
@@ -168,11 +168,11 @@ Sleep, cutie
 CamStraight()
 
 spawn()
-Sleep, LL*2
+Sleep, LL
 button()
-Sleep, LL*1.2
+Sleep, LL
 button()
-Sleep, LL*1.5
+Sleep, LL
 button()
 Send {< down}
 Sleep, LL
@@ -246,7 +246,14 @@ Screen := 1
 
 Gui, Destroy
 
+
 Gui, -Caption
+
+Gui, Add, Edit, va x-100 y-200
+Gui, +hwndHw
+Gui, Color, d0c060, 191919
+Gui, Font, s16 cffffff TAhoma
+
 Gui, Add, Picture, x0 y0, %A_WorkingDir%\images\wallP1.png
 Gui, Add, Picture, x312 y25 gLayerOption, %A_WorkingDir%\images\LayerOption.png
 Gui, Add, Picture, x225 y21 gGuiConfig, %A_WorkingDir%\images\conf.png
@@ -254,6 +261,18 @@ Gui, Add, Picture, x585 y33 gDiscordConfig, %A_WorkingDir%\images\discord.png
 Gui, Add, Picture, x45 y150, %A_WorkingDir%\images\layerconf.png
 Gui, Add, Picture, x497 y150, %A_WorkingDir%\images\closer.png
 Gui, Add, Picture, x45 y200, %A_WorkingDir%\images\startconfig.png
+Gui, Add, Picture, x497 y200, %A_WorkingDir%\images\terminate.png
+Gui, Add, Picture, x269 y250, %A_WorkingDir%\images\teste.png
+
+IniRead, Down, %A_WorkingDir%\YourConfigs.ini, Configs, Down
+
+if down=ERROR
+{
+IniWrite, 0, %A_WorkingDir%\YourConfigs.ini, Configs, down
+down=0
+}
+
+Gui, Add, Edit, x415 y253 w45 h30 vDundun hwndHedt2 Background00ffff, %down%
 
 IniRead, MBOX, %A_WorkingDir%\YourConfigs.ini, Configs, MBOX
 IniRead, GuiClose, %A_WorkingDir%\YourConfigs.ini, Configs, GuiClose
@@ -292,7 +311,17 @@ Gui, Add, Picture, x772 y155 vx2 gCloseGui, %A_WorkingDir%\images\off.png
 IniWrite, 1, %A_WorkingDir%\YourConfigs.ini, Configs, GuiClose
 }
 
-Gui, Show, w877 h589
+Gui, Show, w879 h589
+
+return
+
+Enter::
+Gui, Submit, NoHide
+if Dundun >= 1
+{
+IniWrite, %Dundun%, %A_WorkingDir%\YourConfigs.ini, Configs, down
+;MsgBox, %Dundun%
+}
 
 return
 
@@ -412,6 +441,12 @@ MsgBox, %Layer% Selected
 }
 }
 
+Dundun:
+Sleep, 3500
+MsgBox, %Dundun%
+MsgBox, %Down%
+return
+
 GuiClosefunc()
 {
 IniRead, GuiClose , %A_WorkingDir%\YourConfigs.ini, Configs, GuiClose
@@ -449,121 +484,135 @@ Click, Right, Up
 spawn()
 {
 
+Random mommy, 400, 500
+Random FastMouseMove, 150, 277
+Random FirstS, 250, 300
+Random FirstA, 2500, 3000
+Random FirstD, 690, 750
+Random SecondA, 899, 990
+Random SecondD, 116, 140
+Random FirstW, 2900, 3100
+Random SecondS, 385, 410
+Random 3W, 1520, 1544
+Random 4W, 620, 645
+Random 5W, 785, 815
+Random 6W, 1312 ,1361
+
 Send {s down}
-Sleep, 250
+Sleep, FirstS
 Send {s up}
 
 Sleep, FastMouseMove
 
 Send {a down}
-Sleep, 2600
+Sleep, FirstA
 Send {a up}
 
 Sleep, FastMouseMove
 
 Send {d down}
-Sleep, 790
+Sleep, FirstD
 Send {d up}
 
 Sleep, FastMouseMove
 
 Send {s down}
-Sleep, 330
+Sleep, FirstS
 Send {s up}
 
 Sleep, FastMouseMove
 
 Send {a down}
-Sleep, 990
+Sleep, SecondA
 Send {a up}
 
 Sleep, FastMouseMove
 
 Send {d down}
-Sleep, 120
+Sleep, SecondD
 Send {d up}
 
-Sleep, FastMouseMove*3
+Sleep, FastMouseMove
 
 Send {w down}
-Sleep, 3400
+Sleep, FirstW
 Send {w up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {d down}
-Sleep, 750
+Sleep, FirstD
 Send {d up}
 
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {s down}
-Sleep, 400
+Sleep, SecondS
 Send {s up}
 
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {> down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {> up}
 
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {> down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {> up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {w down}
-Sleep, 1551
+Sleep, 3W
 Send {w up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {< down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {< up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {w down}
-Sleep, 651
+Sleep, 4W
 Send {w up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {> down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {> up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {w down}
-Sleep, 791
+Sleep, 5W
 Send {w up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {< down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {< up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
 Send {w down}
-Sleep, 1351
+Sleep, 6W
 Send {a down}
-Sleep, mommy
+Sleep, FastMouseMove/2
 Send {a up}
 Send {w up}
 
-Sleep, FastMouseMove*2
+Sleep, FastMouseMove
 
-Send {i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
+Send {i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 Send {o down}
 Sleep, gg
 Send {o up}
@@ -573,7 +622,7 @@ button()
 {
 if Layer = top
 {
-;walk
+MsgBox, Not implemented yet :(       (sorry)
 }
 
 if Layer = permafrost
@@ -627,54 +676,46 @@ Click, Left, up
 EquipAll()
 {
 
+Random LL, 750, 1750
+
 Send {2 down}
-Sleep, LL
+Sleep, LL/2.1
 LClick()
-Sleep, LL
 Send {2 up}
 Send {3 down}
-Sleep, LL
+Sleep, LL/2.7
 LClick()
-Sleep, LL
 Send {3 up}
 Send {4 down}
-Sleep, LL
+Sleep, LL/2.66
 LClick()
-Sleep, LL
 Send {4 up}
 Send {5 down}
-Sleep, LL
+Sleep, LL/3
 LClick()
-Sleep, LL
 Send {5 up}
 Send {6 down}
-Sleep, LL
+Sleep, LL/2
 LClick()
-Sleep, LL
 Send {6 up}
 Send {7 down}
-Sleep, LL
+Sleep, LL/2
 LClick()
-Sleep, LL
 Send {7 up}
 Send {8 down}
-Sleep, LL
+Sleep, LL/2.2
 LClick()
-Sleep, LL
 Send {8 up}
 Send {9 down}
-Sleep, LL
+Sleep, LL/2.9
 LClick()
-Sleep, LL
 Send {9 up}
 Send {0 down}
-Sleep, LL
+Sleep, LL/2.7
 LClick()
-Sleep, LL
 Send {0 up}
-Sleep, LL
+Sleep, LL/3
 LClick()
-Sleep, LL
 Send {1 down}
 Send {1 up}
 }
