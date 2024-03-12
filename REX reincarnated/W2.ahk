@@ -113,7 +113,7 @@ yy := 0
 CamStraight()
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 22, gg/5, R
+MouseMove, 0, 24, gg/5, R
 Send {w down}
 Sleep, LL
 Click, Left, down
@@ -133,7 +133,7 @@ Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzP
 if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
 { ; Mine Reset
 
-Sleep, meow*5
+Sleep, meow
 
 Click, Left, up
 Send {w up}
@@ -141,13 +141,16 @@ Send {w up}
 if Layer = top
 {
 Sleep, meow
-
 ;script
 
 }
 else
 {
 
+Sleep, meow
+Sleep, meow
+Sleep, meow
+Sleep, meow
 Sleep, meow
 
 Send {esc down}
@@ -182,7 +185,7 @@ EquipALL()
 
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 22, gg/5, R
+MouseMove, 0, 24, gg/5, R
 
 Click, Left, down
 Send, {w down}
@@ -493,10 +496,9 @@ Random SecondA, 899, 990
 Random SecondD, 116, 140
 Random FirstW, 2900, 3100
 Random SecondS, 385, 410
-Random 3W, 1520, 1544
-Random 4W, 620, 645
-Random 5W, 785, 815
-Random 6W, 1312 ,1361
+Random MyW, 1520, 1552
+MyFix := MyW - 1551
+
 
 Send {s down}
 Sleep, FirstS
@@ -558,61 +560,60 @@ Send {> down}
 Sleep, FastMouseMove/2
 Send {> up}
 
-
-Sleep, FastMouseMove
-
-Send {> down}
-Sleep, FastMouseMove/2
-Send {> up}
-
-Sleep, FastMouseMove
-
-Send {w down}
-Sleep, 3W
-Send {w up}
-
-Sleep, FastMouseMove
-
-Send {< down}
-Sleep, FastMouseMove/2
-Send {< up}
-
-Sleep, FastMouseMove
-
-Send {w down}
-Sleep, 4W
-Send {w up}
-
-Sleep, FastMouseMove
+Sleep, FastMouseMove/3
 
 Send {> down}
 Sleep, FastMouseMove/2
 Send {> up}
 
-Sleep, FastMouseMove
+Sleep, FastMouseMove/2
 
 Send {w down}
-Sleep, 5W
+Sleep, MyW      ;1551
 Send {w up}
 
-Sleep, FastMouseMove
+Sleep, FastMouseMove*2
 
 Send {< down}
-Sleep, FastMouseMove/2
+Sleep, mommy
 Send {< up}
 
-Sleep, FastMouseMove
+Sleep, FastMouseMove*2
 
 Send {w down}
-Sleep, 6W
+Sleep, 651 - MyFix
+Send {w up}
+
+Sleep, FastMouseMove*2
+
+Send {> down}
+Sleep, mommy
+Send {> up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 791 + MyFix
+Send {w up}
+
+Sleep, FastMouseMove*2
+
+Send {< down}
+Sleep, mommy
+Send {< up}
+
+Sleep, FastMouseMove*2
+
+Send {w down}
+Sleep, 1351 + MyFix
 Send {a down}
-Sleep, FastMouseMove/2
+Sleep, mommy
 Send {a up}
 Send {w up}
 
-Sleep, FastMouseMove
+Sleep, FastMouseMove*2
 
-Send {i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
+Send {i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 Send {o down}
 Sleep, gg
 Send {o up}
