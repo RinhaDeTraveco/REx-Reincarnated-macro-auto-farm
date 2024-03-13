@@ -593,7 +593,7 @@ Send {> up}
 Sleep, FastMouseMove*2
 
 Send {w down}
-Sleep, 791 + MyFix
+Sleep, 850 + MyFix*3
 Send {w up}
 
 Sleep, FastMouseMove*2
