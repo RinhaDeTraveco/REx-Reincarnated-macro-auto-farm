@@ -10,7 +10,7 @@
 
 4 - Right click and open file location again
 
-5 - Contente > sounds > delet all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
+5 - Contente > sounds > delete ALL the sounds
 
 6 - put your pc volume on MAX and roblox volume on MAX. 
 
