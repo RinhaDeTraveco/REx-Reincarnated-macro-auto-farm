@@ -20,6 +20,7 @@
 
 # IN GAME CONFIG
 
+ShiftLock **OFF**
 Background Music **OFF**
 Ore Sounds **OFF**
 Disguised Chill **OFF**
