@@ -4,19 +4,19 @@
 
 1 - download AHK (https://www.autohotkey.com)
 
-3 - Press the windows button
+2 - Press the windows button
 
-4 - search "Roblox Player" and open file location
+3 - search "Roblox Player" and open file location
 
-5 - Right click and open file location again
+4 - Right click and open file location again
 
-6 - Contente > sounds > delet all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
+5 - Contente > sounds > delet all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
 
-7 - put your pc volume on MAX and roblox volume on MAX. 
+6 - put your pc volume on MAX and roblox volume on MAX. 
 
-8 - Disable performance stats
+7 - Disable performance stats
 
-9 - ONLY USE AT PRIVATE SERVER
+8 - ONLY USE AT PRIVATE SERVER
 
 # IN GAME CONFIG
 
