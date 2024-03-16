@@ -341,13 +341,9 @@ IniWrite, %Dundun%, %A_WorkingDir%\YourConfigs.ini, Configs, down
 }
 }
 
-else
-{
 Send {Enter down}
 Sleep, gg*2
 Send {Enter up}
-}
-
 
 return
 
