@@ -29,7 +29,13 @@ Exitapp
 return
 
 y::
+Sound = 99
 yy := yy + 1
+if Sound = 99
+{
+Sound = 0
+}
+
 return
 
 f7::
@@ -63,6 +69,7 @@ Global Part1 := 1
 Global Part2 := 0
 Global lolo := 0
 Global yy := 0
+Global Sound := 0
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR'S
 
 CamStraight()
@@ -194,6 +201,8 @@ Send, {w down}
 
 } ; Mine Reset
 
+if Sound = 0
+{ ; For The PAUSE func
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
 if (peakValue>.0005)
 {
@@ -212,6 +221,8 @@ if IFoundABlock = 1
 {
 AutoJump()
 }
+
+} ; For The PAUSE func
 
 } ; MAIN LOOP
 
@@ -319,12 +330,24 @@ Gui, Show, w879 h589
 return
 
 Enter::
+
+if Screen = 2
+{ 
 Gui, Submit, NoHide
 if Dundun >= 1
 {
 IniWrite, %Dundun%, %A_WorkingDir%\YourConfigs.ini, Configs, down
 ;MsgBox, %Dundun%
 }
+}
+
+else
+{
+Send {Enter down}
+Sleep, gg*2
+Send {Enter up}
+}
+
 
 return
 
@@ -493,9 +516,9 @@ Random FirstS, 250, 300
 Random FirstA, 2500, 3000
 Random FirstD, 690, 750
 Random SecondA, 899, 990
-Random SecondD, 116, 140
-Random FirstW, 2900, 3100
-Random SecondS, 385, 410
+Random SecondD, 135, 155
+Random FirstW, 2775, 2900
+Random SecondS, 425, 445
 Random MyW, 1520, 1552
 MyFix := MyW - 1551
 
@@ -593,7 +616,7 @@ Send {> up}
 Sleep, FastMouseMove*2
 
 Send {w down}
-Sleep, 850 + MyFix*3
+Sleep, 1087 + MyFix*10
 Send {w up}
 
 Sleep, FastMouseMove*2
@@ -605,7 +628,7 @@ Send {< up}
 Sleep, FastMouseMove*2
 
 Send {w down}
-Sleep, 1351 + MyFix
+Sleep, 1351
 Send {a down}
 Sleep, mommy
 Send {a up}
