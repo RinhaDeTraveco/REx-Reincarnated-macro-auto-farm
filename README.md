@@ -21,6 +21,7 @@
 # IN GAME CONFIG
 
 ShiftLock **OFF**
+Low Detail **OFF**
 Background Music **OFF**
 Ore Sounds **OFF**
 Disguised Chill **OFF**
