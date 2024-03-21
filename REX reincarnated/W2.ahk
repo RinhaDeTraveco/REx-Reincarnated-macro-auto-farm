@@ -20,6 +20,7 @@ IniRead, GuiClose , %A_WorkingDir%\YourConfigs.ini, Configs, GuiClose
 Global Layer = Layer
 Global MBOX = MBOX
 Global GuiClose = GuiClose
+Global yy := 0
 return
 
 j::
@@ -29,13 +30,12 @@ Exitapp
 return
 
 y::
-Sound = 99
-yy := yy + 1
 if Sound = 99
 {
 Sound = 0
 }
-
+Sound = 99
+yy := yy + 1
 return
 
 f7::
@@ -61,14 +61,13 @@ Global IFoundABlock := 0
 Global start:= 1
 Global Main := 1
 Global bb := 12
-Global reseting := 1
+Global reseting := 0
 Global stop := 0
 Global P1 := 0
 Global restart := 10
 Global Part1 := 1
 Global Part2 := 0
 Global lolo := 0
-Global yy := 0
 Global Sound := 0
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR'S
 
@@ -102,6 +101,7 @@ Loop
 
 if yy = 1
 {
+IFoundABlock = 0
 MsgBox, Paused
 IFoundABlock := 0
 Send {w down}
@@ -120,7 +120,7 @@ yy := 0
 CamStraight()
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 24, gg/5, R
+MouseMove, 0, 25, gg/5, R
 Send {w down}
 Sleep, LL
 Click, Left, down
@@ -138,27 +138,35 @@ Laila := 0
 Text:="|<>*42$100.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzs6zzzzjzzzyqzzzzzsvzzzzzzzzzPzzzzDrVsy4P3ltghjX6C8TS39s1g6HoKqy9+mHxvBbgqqPD0PPtgbNDrgUSnPN0wFhjg304zSn/vBhaLtCqytOGnxvCDgqqQTYvPvlXX7zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzU"
 
 if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
+{
+Reseting := 1
+Seconds := 30000
+}
+
+Text:="|<>*44$163.00000Tzzzzzzzzzzzzzw000000000000Tzzzzzzzzzzzzzy000000000000DzzzzzzzzzzzzzzU000000000007zzzzzzzzzzzzzzk000000000002zzzzfTzzzzjznts000000008023TzzzojzzzrrzksQ00000E02U001gCTPOLXCQlv7nNjU20002010E20q67Yd/l2A8x1tZnk1031100V9VN/PNk4Ztg6myYy2tsYBAgYW0EY0gZhUwWGwkE1THTvBw06aKGM08G26GqmyH9SNMZbdjVUy080G8000000/PQTBpjCAsnqrlsz200000000007zzzzzzzzzzzzzzzs00000000001zzzzzzzzzzzzzzzs00000000000zzzzzzzzzzzzzzzw0000004"
+
+if (ok:=FindText(X, Y, 398, 24, 1112, 53, 0, 0, Text))
+{
+Reseting := 1
+Seconds := 90000
+}
+
+if Reseting = 1
 { ; Mine Reset
 
-Sleep, meow
+Sleep, Seconds+PORRA
 
-Click, Left, up
 Send {w up}
+Click, Left, up
+
+Sleep, Seconds*2.5
 
 if Layer = top
 {
-Sleep, meow
 ;script
-
 }
 else
 {
-
-Sleep, meow
-Sleep, meow
-Sleep, meow
-Sleep, meow
-Sleep, meow
 
 Send {esc down}
 Sleep, LL
@@ -172,8 +180,7 @@ Send {Enter down}
 Sleep, LL
 Send {Enter up}
 
-Sleep, meow
-Sleep, cutie
+Sleep, PORRA*2.5
 
 CamStraight()
 
@@ -192,37 +199,31 @@ EquipALL()
 
 MouseMove, pos1, pos2, gg/4
 Sleep, LL
-MouseMove, 0, 24, gg/5, R
+MouseMove, 0, 25, gg/5, R
 
 Click, Left, down
 Send, {w down}
 }
 
+Reseting = 0
 
 } ; Mine Reset
 
 if Sound = 0
 { ; For The PAUSE func
-VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
+VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue)
 if (peakValue>.0005)
 {
 Click, Left, up
 Send {w up}
 IFoundABlock := 1
 }
-if (peakValue>.0005)
-{
-Click, Left, up
-Send {w up}
-IFoundABlock := 1
-}
+} ; For The PAUSE func
 
 if IFoundABlock = 1
 {
 AutoJump()
 }
-
-} ; For The PAUSE func
 
 } ; MAIN LOOP
 
@@ -482,14 +483,16 @@ WinMinimize, %TabName%
 CamStraight()
 {
 
+Random mommy, 400, 500
+
 Send {< down}
-Sleep, mommy
+Sleep, mommy/4
 Send {< up}
-Sleep, mommy
+Sleep, mommy/3
 Send {> down}
-Sleep, mommy
+Sleep, mommy/4.2
 Send {> up}
-Sleep, mommy
+Sleep, mommy/5
 
 MouseMove, 500, 600, 0
 Click, Right, down
@@ -515,15 +518,25 @@ Random SecondA, 899, 990
 Random SecondD, 135, 155
 Random FirstW, 2775, 2900
 Random SecondS, 425, 445
-Random MyW, 1520, 1552
-MyFix := MyW - 1551
+Random MyW, 1530, 1552
 
+MyFix := MyW - 1551
+if MyFix < 10
+{
+MYFix := 11
+}
 
 Send {s down}
 Sleep, FirstS
 Send {s up}
 
-Sleep, FastMouseMove
+Sleep, FastMouseMove/2.2
+
+Send {space down}
+Sleep, FastMouseMove/10
+Send {space up}
+
+Sleep, FastMouseMove/2.4
 
 Send {a down}
 Sleep, FirstA
@@ -612,7 +625,7 @@ Send {> up}
 Sleep, FastMouseMove*2
 
 Send {w down}
-Sleep, 1087 + MyFix*10
+Sleep, 980 + MyFix*10
 Send {w up}
 
 Sleep, FastMouseMove*2
@@ -747,7 +760,6 @@ Random ez, 1500, 8900
 Random cutie, 500, 3333
 Random PORRA, 2500, 3750
 Random LL, 750, 1750
-Random meno, 50000, 100000
 Random MyLove, 1, 6
 x := A_screenWidth - 100
 y := A_screenHeight - 100
@@ -852,7 +864,7 @@ Random gg, 45, 100
 
 Click, Right, down
 MouseMove, DarkDex, Mozaum, gg
-Sleep, meno
+Sleep, PORRA
 Click, Right, up
 }
 
