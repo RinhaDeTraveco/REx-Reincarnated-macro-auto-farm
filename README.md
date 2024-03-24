@@ -1,6 +1,7 @@
 # HOW TO USE 
-(sorry for making a so shit script) (that's not a joke) (report bugs on my discord rinha_de_traveco)
+(sorry for making a so shit script) (that's not a joke) (report bugs on my leyley_the_trash_scripter dont be shy)
 
+i got banned by macro, to no get banned like me, play ONLY for some hours/a night, dont stay many hours at your private server (no more updates until someone send a message on my dc)
 
 1 - download AHK (https://www.autohotkey.com)
 
