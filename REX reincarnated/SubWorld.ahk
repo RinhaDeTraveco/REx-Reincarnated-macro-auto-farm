@@ -1,5 +1,9 @@
-#Include VA.ahk
 #SingleInstance, Force
+#Include %A_ScriptDir%\lib
+#Include VA.ahk
+#Include FindText.ahk
+#Include FindClick.ahk
+
 audioMeter := VA_GetAudioMeter()
 VA_IAudioMeterInformation_GetMeteringChannelCount(audioMeter, channelCount)
 VA_GetDevicePeriod("capture", devicePeriod)
