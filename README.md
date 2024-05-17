@@ -1,5 +1,5 @@
 # HOW TO USE 
-(sorry for making a so shit script) (that's not a joke) (report bugs on my discord "leyley_the_trash_scripter" dont be shy)
+(sorry for making a so shit script) (that's not a joke) (report bugs on my discord "rinha_de_traveco" dont be shy)
 
 1 - download AHK (https://www.autohotkey.com)
 
