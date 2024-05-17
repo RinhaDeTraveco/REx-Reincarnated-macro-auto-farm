@@ -89,7 +89,7 @@ Click, Left, down
 lolo := 1
 }
 
-if bock := 10
+if bock = 10
 {
 loop 10
 {
